@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gisele de Paulo — Micropigmentação Paramédica de alta precisão. Sobrancelhas, lábios e olhos com técnicas exclusivas. Agende sua avaliação pelo WhatsApp." />
+  <meta name="keywords" content="micropigmentação, sobrancelha, lábios, eyeliner, paramédica, Gisele de Paulo, make permanente" />
+  <meta property="og:title" content="Gisele de Paulo | Micropigmentação Paramédica" />
+  <meta property="og:description" content="Realce sua beleza natural com micropigmentação paramédica de alta precisão. Agende sua avaliação." />
+  <meta property="og:image" content="hero_banner.png" />
+  <title>Gisele de Paulo | Micropigmentação Paramédica</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* ======================================================
+       DESIGN TOKENS & RESET
+    ====================================================== */
+    :root {
+      --brand-champagne:   #C9A96E;
+      --brand-gold:        #B8903A;
+      --brand-dark-gold:   #8B6914;
+      --brand-cream:       #FAF6F0;
+      --brand-ivory:       #F5EDE0;
+      --brand-blush:       #E8C9B0;
+      --brand-rose:        #D4A5A5;
+      --brand-mauve:       #8B6B6B;
+      --brand-deep:        #1A1208;
+      --brand-charcoal:    #2D2416;
+      --brand-medium:      #5A4A30;
+      --text-primary:      #1A1208;
+      --text-secondary:    #5A4A30;
+      --text-light:        #8B7A5A;
+      --text-white:        #FAF6F0;
+      --shadow-gold:       rgba(185, 144, 58, 0.25);
+      --shadow-dark:       rgba(26, 18, 8, 0.15);
+      --gradient-hero:     linear-gradient(160deg, #1A1208 0%, #2D2416 40%, #3D2E18 70%, #1A1208 100%);
+      --gradient-gold:     linear-gradient(135deg, #C9A96E 0%, #B8903A 50%, #8B6914 100%);
+      --gradient-champagne: linear-gradient(135deg, #FAF6F0 0%, #F5EDE0 50%, #E8C9B0 100%);
+      --radius-sm:         6px;
+      --radius-md:         12px;
+      --radius-lg:         20px;
+      --radius-xl:         32px;
+      --radius-full:       9999px;
+      --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --font-display:      'Cormorant Garamond', Georgia, serif;
+      --font-body:         'Montserrat', 'Segoe UI', sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--brand-cream);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a   { text-decoration: none; color: inherit; }
+    ul  { list-style: none; }
+
+    /* ======================================================
+       UTILITY CLASSES
+    ====================================================== */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brand-champagne);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--text-primary);
+    }
+
+    .section-title span {
+      color: var(--brand-champagne);
+      font-style: italic;
+    }
+
+    /* ======================================================
+       SCROLL REVEAL ANIMATION
+    ====================================================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* ======================================================
+       NAVBAR
+    ====================================================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      transition: var(--transition-smooth);
+    }
+
+    .navbar.scrolled {
+      background: rgba(26, 18, 8, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 12px 24px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--brand-cream);
+      letter-spacing: 0.05em;
+    }
+
+    .nav-logo span {
+      color: var(--brand-champagne);
+      font-style: italic;
+    }
+
+    .nav-tagline {
+      font-family: var(--font-body);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brand-champagne);
+      display: block;
+      margin-top: -2px;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gradient-gold);
+      color: var(--brand-cream);
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 20px var(--shadow-gold);
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--shadow-gold);
+    }
+
+    /* ======================================================
+       HERO SECTION
+    ====================================================== */
+    #hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background: var(--gradient-hero);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      opacity: 0.45;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(26, 18, 8, 0.3) 0%,
+        rgba(26, 18, 8, 0.1) 30%,
+        rgba(26, 18, 8, 0.6) 65%,
+        rgba(26, 18, 8, 0.97) 100%
+      );
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(201, 169, 110, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 20% 80%, rgba(201, 169, 110, 0.06) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 40px 24px 56px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201, 169, 110, 0.15);
+      border: 1px solid rgba(201, 169, 110, 0.35);
+      color: var(--brand-champagne);
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-badge i { font-size: 0.6rem; }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 8vw, 5rem);
+      font-weight: 300;
+      color: var(--brand-cream);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .hero-title strong {
+      font-weight: 600;
+      display: block;
+      color: var(--brand-champagne);
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: #E8D5B5;
+    }
+
+    .hero-subtitle {
+      font-size: 0.9rem;
+      color: rgba(250, 246, 240, 0.75);
+      font-weight: 300;
+      max-width: 420px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--gradient-gold);
+      color: var(--brand-deep);
+      padding: 16px 32px;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition: var(--transition-smooth);
+      box-shadow: 0 8px 32px rgba(185, 144, 58, 0.4);
+      animation: pulseCTA 2.5s ease-in-out infinite;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 16px 48px rgba(185, 144, 58, 0.6);
+      animation: none;
+    }
+
+    .btn-primary i { font-size: 1.1rem; }
+
+    @keyframes pulseCTA {
+      0%, 100% { box-shadow: 0 8px 32px rgba(185, 144, 58, 0.4); }
+      50%       { box-shadow: 0 8px 48px rgba(185, 144, 58, 0.7), 0 0 0 8px rgba(185, 144, 58, 0.1); }
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--brand-champagne);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid rgba(201, 169, 110, 0.4);
+      padding-bottom: 2px;
+      transition: var(--transition-smooth);
+    }
+
+    .btn-secondary:hover {
+      border-bottom-color: var(--brand-champagne);
+      gap: 14px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      margin-top: 44px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(201, 169, 110, 0.2);
+    }
+
+    .hero-stat { text-align: left; }
+
+    .hero-stat-number {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--brand-champagne);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 0.65rem;
+      color: rgba(250, 246, 240, 0.55);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: 3px;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 28px;
+      right: 28px;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(201, 169, 110, 0.6);
+    }
+
+    .scroll-indicator span {
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      writing-mode: vertical-lr;
+    }
+
+    .scroll-indicator i { animation: bounceDown 1.5s ease-in-out infinite; }
+
+    @keyframes bounceDown {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(6px); }
+    }
+
+    /* ======================================================
+       MARQUEE BAR
+    ====================================================== */
+    .marquee-bar {
+      background: var(--gradient-gold);
+      padding: 14px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee-track {
+      display: inline-flex;
+      animation: marquee 22s linear infinite;
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      padding: 0 28px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brand-deep);
+    }
+
+    .marquee-item i { font-size: 0.55rem; opacity: 0.7; }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ======================================================
+       SOBRE / BIO SECTION
+    ====================================================== */
+    #sobre {
+      padding: 96px 0;
+      background: var(--brand-cream);
+    }
+
+    .bio-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .bio-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .profile-ring {
+      position: relative;
+      width: 200px;
+      height: 200px;
+    }
+
+    .profile-ring::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: conic-gradient(
+        var(--brand-champagne) 0deg,
+        transparent 90deg,
+        var(--brand-gold) 180deg,
+        transparent 270deg,
+        var(--brand-champagne) 360deg
+      );
+      animation: spinRing 8s linear infinite;
+    }
+
+    @keyframes spinRing {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .profile-img-wrap {
+      position: absolute;
+      inset: 5px;
+      border-radius: 50%;
+      overflow: hidden;
+      z-index: 1;
+      border: 3px solid var(--brand-cream);
+    }
+
+    .profile-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .profile-badge-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .profile-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--brand-ivory);
+      border: 1px solid rgba(201, 169, 110, 0.3);
+      color: var(--brand-gold);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+    }
+
+    .instagram-handle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--brand-champagne);
+      font-size: 0.82rem;
+      font-weight: 500;
+      transition: var(--transition-smooth);
+    }
+
+    .instagram-handle:hover { color: var(--brand-gold); }
+
+    .bio-intro {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin: 16px 0 24px;
+    }
+
+    .bio-intro em { font-style: italic; color: var(--brand-champagne); }
+
+    .bio-text {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .bio-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .bio-bullet {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .bullet-icon {
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      border-radius: var(--radius-md);
+      background: var(--gradient-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-deep);
+      font-size: 0.85rem;
+      box-shadow: 0 4px 16px var(--shadow-gold);
+    }
+
+    .bullet-text strong {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .bullet-text span {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+
+    .bio-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--gradient-gold);
+      color: var(--brand-deep);
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition: var(--transition-smooth);
+      box-shadow: 0 6px 24px var(--shadow-gold);
+    }
+
+    .bio-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px var(--shadow-gold);
+    }
+
+    /* ======================================================
+       SERVICES SECTION
+    ====================================================== */
+    #servicos {
+      padding: 96px 0;
+      background: var(--brand-deep);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #servicos::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(201, 169, 110, 0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .services-header .section-title { color: var(--brand-cream); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .service-card {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      min-height: 420px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .service-card:hover { transform: translateY(-8px); }
+
+    .service-card-bg {
+      position: absolute;
+      inset: 0;
+    }
+
+    .service-card-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .service-card:hover .service-card-bg img { transform: scale(1.07); }
+
+    .service-card-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(26, 18, 8, 0.15) 0%,
+        rgba(26, 18, 8, 0.3) 40%,
+        rgba(26, 18, 8, 0.88) 100%
+      );
+    }
+
+    .service-card-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 28px 24px;
+      z-index: 2;
+    }
+
+    .service-tag {
+      display: inline-block;
+      background: rgba(201, 169, 110, 0.2);
+      border: 1px solid rgba(201, 169, 110, 0.4);
+      color: var(--brand-champagne);
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      backdrop-filter: blur(6px);
+    }
+
+    .service-title {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 500;
+      color: var(--brand-cream);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .service-desc {
+      font-size: 0.8rem;
+      color: rgba(250, 246, 240, 0.72);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .service-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gradient-gold);
+      color: var(--brand-deep);
+      padding: 11px 22px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition: var(--transition-smooth);
+      box-shadow: 0 4px 16px var(--shadow-gold);
+    }
+
+    .service-btn:hover {
+      box-shadow: 0 8px 28px var(--shadow-gold);
+      transform: translateX(4px);
+    }
+
+    /* ======================================================
+       DEPOIMENTOS
+    ====================================================== */
+    #depoimentos {
+      padding: 96px 0;
+      background: var(--brand-ivory);
+      overflow: hidden;
+    }
+
+    .testimonials-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .testimonials-carousel {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .testimonial-slide {
+      min-width: 100%;
+      padding: 0 20px;
+    }
+
+    .testimonial-card {
+      background: #fff;
+      border-radius: var(--radius-xl);
+      padding: 36px 28px;
+      box-shadow: 0 8px 40px rgba(26, 18, 8, 0.08);
+      border: 1px solid rgba(201, 169, 110, 0.15);
+      max-width: 480px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .testimonial-card::before {
+      content: '\201C';
+      position: absolute;
+      top: -10px;
+      left: 24px;
+      font-family: var(--font-display);
+      font-size: 6rem;
+      color: var(--brand-champagne);
+      line-height: 1;
+      opacity: 0.3;
+    }
+
+    .testimonial-stars {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-stars i {
+      color: var(--brand-champagne);
+      font-size: 0.9rem;
+    }
+
+    .testimonial-text {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--gradient-gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-deep);
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .author-name {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--text-primary);
+    }
+
+    .author-detail {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    .testimonial-verified {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: #25D366;
+      font-size: 0.68rem;
+      font-weight: 600;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: var(--radius-full);
+      background: rgba(201, 169, 110, 0.3);
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      padding: 0;
+    }
+
+    .carousel-dot.active {
+      background: var(--brand-champagne);
+      width: 28px;
+    }
+
+    .carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .carousel-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 169, 110, 0.3);
+      background: transparent;
+      color: var(--brand-champagne);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition-smooth);
+      font-size: 0.9rem;
+    }
+
+    .carousel-btn:hover {
+      background: var(--brand-champagne);
+      color: var(--brand-deep);
+      border-color: var(--brand-champagne);
+    }
+
+    /* ======================================================
+       GALLERY
+    ====================================================== */
+    #galeria {
+      padding: 96px 0;
+      background: var(--brand-cream);
+    }
+
+    .gallery-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      max-width: 600px;
+      margin: 0 auto 36px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .gallery-item {
+      aspect-ratio: 1;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover img { transform: scale(1.08); }
+
+    .gallery-item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(201, 169, 110, 0);
+      transition: var(--transition-smooth);
+    }
+
+    .gallery-item:hover::after { background: rgba(201, 169, 110, 0.2); }
+
+    .gallery-cta { text-align: center; }
+
+    .btn-instagram {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+      color: white;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      transition: var(--transition-smooth);
+      box-shadow: 0 6px 28px rgba(253, 29, 29, 0.25);
+    }
+
+    .btn-instagram:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(253, 29, 29, 0.35);
+    }
+
+    /* ======================================================
+       CTA FINAL
+    ====================================================== */
+    #cta-final {
+      padding: 100px 0;
+      background: var(--gradient-hero);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cta-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(201, 169, 110, 0.12) 0%, transparent 70%);
+    }
+
+    .cta-final-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .cta-final-inner .section-title { color: var(--brand-cream); }
+
+    .cta-final-inner p {
+      color: rgba(250, 246, 240, 0.72);
+      font-size: 0.9rem;
+      line-height: 1.75;
+      margin: 20px 0 40px;
+    }
+
+    .btn-cta-final {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: #25D366;
+      color: white;
+      padding: 18px 36px;
+      border-radius: var(--radius-full);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      transition: var(--transition-smooth);
+      box-shadow: 0 10px 40px rgba(37, 211, 102, 0.35);
+      animation: pulseCTA 2.5s ease-in-out infinite;
+    }
+
+    .btn-cta-final:hover {
+      background: #20ba5a;
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 20px 60px rgba(37, 211, 102, 0.5);
+      animation: none;
+    }
+
+    .btn-cta-final i { font-size: 1.3rem; }
+
+    .cta-note {
+      margin-top: 18px;
+      font-size: 0.72rem;
+      color: rgba(250, 246, 240, 0.45);
+      letter-spacing: 0.08em;
+    }
+
+    /* ======================================================
+       FOOTER
+    ====================================================== */
+    footer {
+      background: #0D0B07;
+      padding: 48px 24px 32px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--brand-champagne);
+      margin-bottom: 6px;
+    }
+
+    .footer-logo em { font-style: italic; }
+
+    .footer-tagline {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(201, 169, 110, 0.5);
+      margin-bottom: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(250, 246, 240, 0.45);
+      font-size: 0.78rem;
+      transition: var(--transition-smooth);
+    }
+
+    .footer-links a:hover { color: var(--brand-champagne); }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .footer-social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 169, 110, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(201, 169, 110, 0.7);
+      font-size: 0.85rem;
+      transition: var(--transition-smooth);
+    }
+
+    .footer-social a:hover {
+      background: rgba(201, 169, 110, 0.15);
+      color: var(--brand-champagne);
+      border-color: var(--brand-champagne);
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      border-top: 1px solid rgba(201, 169, 110, 0.1);
+      font-size: 0.7rem;
+      color: rgba(250, 246, 240, 0.25);
+    }
+
+    /* ======================================================
+       FLOATING WHATSAPP
+    ====================================================== */
+    #whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .wa-tooltip {
+      background: rgba(26, 18, 8, 0.95);
+      color: var(--brand-cream);
+      padding: 9px 16px;
+      border-radius: var(--radius-lg);
+      font-size: 0.75rem;
+      font-weight: 500;
+      white-space: nowrap;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+      opacity: 0;
+      transform: translateX(10px);
+      transition: var(--transition-smooth);
+      pointer-events: none;
+    }
+
+    #whatsapp-float:hover .wa-tooltip {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .wa-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25D366;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.6rem;
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.45);
+      transition: var(--transition-smooth);
+      position: relative;
+    }
+
+    .wa-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: #25D366;
+      animation: waRipple 2.5s ease-out infinite;
+    }
+
+    @keyframes waRipple {
+      0%   { transform: scale(1); opacity: 0.5; }
+      100% { transform: scale(1.8); opacity: 0; }
+    }
+
+    .wa-btn i { position: relative; z-index: 1; }
+
+    .wa-btn:hover {
+      transform: scale(1.12);
+      box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
+    }
+
+    /* ======================================================
+       RESPONSIVE
+    ====================================================== */
+    @media (min-width: 600px) {
+      .hero-cta-group { flex-direction: row; align-items: center; }
+      .services-grid  { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 900px) {
+      .bio-wrapper {
+        grid-template-columns: 280px 1fr;
+        gap: 72px;
+      }
+      .bio-visual  { align-items: flex-start; }
+      .profile-ring { width: 240px; height: 240px; }
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+      .service-card  { min-height: 500px; }
+      .testimonial-slide { min-width: 50%; padding: 0 16px; }
+      .gallery-grid { max-width: 700px; }
+    }
+
+    @media (min-width: 1100px) {
+      .hero-content { padding: 60px 48px 80px; max-width: 680px; }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--brand-champagne);
+      outline-offset: 3px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
+    <div class="nav-logo">
+      Gisele <span>de Paulo</span>
+      <em class="nav-tagline">Micropigmentação Paramédica</em>
+    </div>
+    <a href="https://wa.me/5585988623793?text=Olá%20Gisele!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação."
+       class="nav-cta"
+       target="_blank"
+       rel="noopener noreferrer"
+       id="nav-whatsapp-btn"
+       aria-label="Agendar avaliação pelo WhatsApp">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+      Agendar
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" aria-label="Apresentação principal">
+    <div class="hero-bg">
+      <img src="gisele_hero_real.png"
+           alt="Gisele de Paulo em seu consultório de micropigmentação paramédica em Fortaleza" />
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-star" aria-hidden="true"></i>
+        Micropigmentação Paramédica em Fortaleza
+      </div>
+      <h1 class="hero-title">
+        Sua beleza,
+        <strong>redesenhada</strong>
+        <em>com precisão.</em>
+      </h1>
+      <p class="hero-subtitle">
+        Técnicas exclusivas de micropigmentação paramédica e estética para realçar
+        sua beleza natural com resultados ultra-realistas e duradouros.
+      </p>
+      <div class="hero-cta-group">
+        <a href="https://wa.me/5585988623793?text=Olá%20Gisele!%20Vim%20pelo%20site%20e%20quero%20agendar%20minha%20avaliação!"
+           class="btn-primary"
+           target="_blank"
+           rel="noopener noreferrer"
+           id="hero-whatsapp-btn"
+           aria-label="Agendar avaliação pelo WhatsApp">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          Agendar Avaliação
+        </a>
+        <a href="#servicos" class="btn-secondary" aria-label="Ver serviços">
+          Ver serviços <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="hero-stats" aria-label="Estatísticas">
+        <div class="hero-stat">
+          <div class="hero-stat-number">+18</div>
+          <div class="hero-stat-label">Anos devolvendo autoestima</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">+2.500</div>
+          <div class="hero-stat-label">Procedimentos realizados</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">5★</div>
+          <div class="hero-stat-label">Avaliação média em Fortaleza</div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>Rolar</span>
+      <i class="fa-solid fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-bar" aria-hidden="true">
+    <div class="marquee-track">
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Sobrancelha Fio a Fio</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Aquarela nos Lábios</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Eyeliner Definitivo</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Nano Pigmentação</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Avaliação</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Resultado Natural</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Sobrancelha Fio a Fio</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Aquarela nos Lábios</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Eyeliner Definitivo</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Nano Pigmentação</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Avaliação</span>
+      <span class="marquee-item"><i class="fa-solid fa-diamond"></i> Resultado Natural</span>
+    </div>
+  </div>
+
+  <!-- SOBRE -->
+  <section id="sobre" aria-labelledby="sobre-heading">
+    <div class="container">
+      <div class="bio-wrapper">
+        <div class="bio-visual reveal-left">
+          <div class="profile-ring">
+            <div class="profile-img-wrap">
+              <img src="gisele_avatar_real.png"
+                   alt="Gisele de Paulo — Expert em Micropigmentação e Paramédica Mamária em Fortaleza" />
+            </div>
+          </div>
+          <div class="profile-badge-group">
+            <div class="profile-badge">
+              <i class="fa-solid fa-award" aria-hidden="true"></i>
+              +18 Anos de Exp.
+            </div>
+            <div class="profile-badge">
+              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+              Paramédica Mamária
+            </div>
+          </div>
+          <a href="https://www.instagram.com/giseledepaulo/"
+             class="instagram-handle"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="Seguir no Instagram @giseledepaulo">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            @giseledepaulo
+          </a>
+        </div>
+        <div class="bio-content reveal-right">
+          <p class="section-label">Sobre Gisele de Paulo</p>
+          <h2 id="sobre-heading" class="bio-intro">
+            +18 anos <em>devolvendo autoestima</em> e naturalidade.
+          </h2>
+          <p class="bio-text">
+            Expert em micropigmentação de sobrancelhas e reconstrução paramédica mamária em Fortaleza.
+            Gisele de Paulo combina alta precisão técnica e sensibilidade para restaurar a confiança
+            e realçar a beleza única de cada cliente.
+          </p>
+          <ul class="bio-bullets" aria-label="Diferenciais profissionais">
+            <li class="bio-bullet">
+              <div class="bullet-icon" aria-hidden="true"><i class="fa-solid fa-user-doctor"></i></div>
+              <div class="bullet-text">
+                <strong>Especialista Paramédica</strong>
+                <span>Reconstrução areolar e correção estética com segurança médica</span>
+              </div>
+            </li>
+            <li class="bio-bullet">
+              <div class="bullet-icon" aria-hidden="true"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+              <div class="bullet-text">
+                <strong>Método Autoral & Fio a Fio</strong>
+                <span>Design milimétrico adaptado às feições anatômicas do seu rosto</span>
+              </div>
+            </li>
+            <li class="bio-bullet">
+              <div class="bullet-icon" aria-hidden="true"><i class="fa-solid fa-gem"></i></div>
+              <div class="bullet-text">
+                <strong>Pigmentos Premium Dermatológicos</strong>
+                <span>Tonalidades e fixação naturais sem alteração de cor ao longo do tempo</span>
+              </div>
+            </li>
+            <li class="bio-bullet">
+              <div class="bullet-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="bullet-text">
+                <strong>Atendimento Exclusivo em Fortaleza</strong>
+                <span>Ambiente acolhedor, privado e higienizado com os mais altos padrões</span>
+              </div>
+            </li>
+          </ul>
+          <a href="https://wa.me/5585988623793?text=Olá%20Gisele!%20Li%20seu%20perfil%20no%20site%20e%20gostaria%20de%20agendar%20uma%20consulta."
+             class="bio-cta"
+             target="_blank"
+             rel="noopener noreferrer"
+             id="bio-whatsapp-btn"
+             aria-label="Conversar com a Gisele pelo WhatsApp">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+            Conversar com a Gisele
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" aria-labelledby="servicos-heading">
+    <div class="container">
+      <header class="services-header reveal">
+        <p class="section-label" style="color:rgba(201,169,110,0.7);">Procedimentos Especializados</p>
+        <h2 id="servicos-heading" class="section-title" style="color:var(--brand-cream);">
+          Serviços <span>exclusivos</span><br>para você
+        </h2>
+      </header>
+      <div class="services-grid" role="list" aria-label="Serviços de micropigmentação">
+
+        <article class="service-card reveal" role="listitem">
+          <div class="service-card-bg">
+            <img src="service_eyebrows_real.png"
+                 alt="Micropigmentação de Sobrancelhas Fio a Fio por Gisele de Paulo" />
+          </div>
+          <div class="service-card-content">
+            <span class="service-tag">Mais Solicitado</span>
+            <h3 class="service-title">Sobrancelhas<br>Fio a Fio</h3>
+            <p class="service-desc">
+              Técnica exclusiva de nanopigmentação que desenha fio por fio em harmonia com sua estrutura facial, proporcionando um preenchimento natural e elegante.
+            </p>
+            <a href="https://wa.me/5585988623793?text=Olá%20Gisele!%20Tenho%20interesse%20na%20Micropigmentação%20de%20Sobrancelhas%20Fio%20a%20Fio!"
+               class="service-btn"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Saber mais sobre Sobrancelhas Fio a Fio">
+              Quero Saber Mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card reveal" role="listitem">
+          <div class="service-card-bg">
+            <img src="service_lips_real.png"
+                 alt="Micropigmentação e Dermopigmentação Estética Labial por Gisele de Paulo" />
+          </div>
+          <div class="service-card-content">
+            <span class="service-tag">Revitalização</span>
+            <h3 class="service-title">Aquarela<br>nos Lábios</h3>
+            <p class="service-desc">
+              Realce a cor, o contorno e a definição dos seus lábios de forma sutil e natural. Devolve o tom saudável e o brilho jovial com efeito batom suave.
+            </p>
+            <a href="https://wa.me/5585988623793?text=Olá%20Gisele!%20Tenho%20interesse%20na%20Aquarela%20nos%20Lábios!"
+               class="service-btn"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Saber mais sobre Aquarela nos Lábios">
+              Quero Saber Mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <article class="service-card reveal" role="listitem">
+          <div class="service-card-bg">
+            <img src="service_paramedica_real.png"
+                 alt="Micropigmentação Paramédica Mamária e Areolar por Gisele de Paulo" />
+          </div>
+          <div class="service-card-content">
+            <span class="service-tag">Especialidade</span>
+            <h3 class="service-title">Paramédica<br>Mamária</h3>
+            <p class="service-desc">
+              Reconstrução areolar 3D e camuflagem paramédica com técnica clínica refinada. Devolve a integridade estética e o bem-estar com sensibilidade e respeito.
+            </p>
+            <a href="https://wa.me/5585988623793?text=Olá%20Gisele!%20Gostaria%20de%20informações%20sobre%20a%20Micropigmentação%20Paramédica."
+               class="service-btn"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Saber mais sobre Micropigmentação Paramédica">
+              Quero Saber Mais <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos" aria-labelledby="depoimentos-heading">
+    <div class="container">
+      <header class="testimonials-header reveal">
+        <p class="section-label">O que dizem sobre mim</p>
+        <h2 id="depoimentos-heading" class="section-title">
+          Clientes que <span>amaram</span><br>o resultado
+        </h2>
+      </header>
+
+      <div class="testimonials-carousel" role="region" aria-label="Carrossel de depoimentos" aria-live="polite">
+        <div class="carousel-track" id="carousel-track">
+
+          <div class="testimonial-slide" role="group" aria-label="Depoimento 1 de 3">
+            <article class="testimonial-card">
+              <div class="testimonial-stars" aria-label="5 estrelas">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+              </div>
+              <blockquote>
+                <p class="testimonial-text">
+                  "Minha vida mudou completamente depois da sobrancelha fio a fio com a Gisele.
+                  Acordo todo dia me sentindo confiante sem precisar passar maquiagem.
+                  O resultado é tão natural que ninguém acredita que é micropigmentação!"
+                </p>
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">A</div>
+                <div>
+                  <div class="author-name">Ana Carolina S.</div>
+                  <div class="author-detail">Sobrancelha Fio a Fio · São Paulo, SP</div>
+                </div>
+                <div class="testimonial-verified" aria-label="Verificado">
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  Verificado
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="testimonial-slide" role="group" aria-label="Depoimento 2 de 3">
+            <article class="testimonial-card">
+              <div class="testimonial-stars" aria-label="5 estrelas">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+              </div>
+              <blockquote>
+                <p class="testimonial-text">
+                  "Fiz a aquarela nos lábios há 8 meses e ainda está perfeita! A Gisele tem
+                  um cuidado excepcional, explicou todo o processo com calma e o pós-procedimento
+                  foi tranquilíssimo. Super indico para todas as amigas!"
+                </p>
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">M</div>
+                <div>
+                  <div class="author-name">Mariana F.</div>
+                  <div class="author-detail">Aquarela nos Lábios · Campinas, SP</div>
+                </div>
+                <div class="testimonial-verified" aria-label="Verificado">
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  Verificado
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="testimonial-slide" role="group" aria-label="Depoimento 3 de 3">
+            <article class="testimonial-card">
+              <div class="testimonial-stars" aria-label="5 estrelas">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+              </div>
+              <blockquote>
+                <p class="testimonial-text">
+                  "Tinha muito medo de fazer eyeliner definitivo, mas a Gisele me deixou
+                  completamente à vontade. O traço ficou impecável! Economizo tempo todo
+                  dia e meu olhar está muito mais marcante. Profissional de excelência!"
+                </p>
+              </blockquote>
+              <div class="testimonial-author">
+                <div class="author-avatar" aria-hidden="true">J</div>
+                <div>
+                  <div class="author-name">Juliana M.</div>
+                  <div class="author-detail">Eyeliner Definitivo · Ribeirão Preto, SP</div>
+                </div>
+                <div class="testimonial-verified" aria-label="Verificado">
+                  <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                  Verificado
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="carousel-dots" role="tablist" aria-label="Navegar entre depoimentos">
+        <button class="carousel-dot active" role="tab" aria-selected="true" aria-label="Depoimento 1" data-index="0"></button>
+        <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Depoimento 2" data-index="1"></button>
+        <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Depoimento 3" data-index="2"></button>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="carousel-prev" aria-label="Depoimento anterior">
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <button class="carousel-btn" id="carousel-next" aria-label="Próximo depoimento">
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" aria-labelledby="galeria-heading">
+    <div class="container">
+      <header class="gallery-header reveal">
+        <p class="section-label">Meu trabalho</p>
+        <h2 id="galeria-heading" class="section-title">
+          Inspiração do <span>Feed</span>
+        </h2>
+        <p style="color:var(--text-light);font-size:0.85rem;margin-top:10px;">
+          Siga no Instagram para ver mais resultados reais
+        </p>
+      </header>
+
+      <div class="gallery-grid reveal" role="list" aria-label="Galeria de resultados reais do Instagram">
+        <div class="gallery-item" role="listitem">
+          <img src="service_eyebrows_real.png" alt="Procedimento de Micropigmentação de Sobrancelhas Fio a Fio por Gisele de Paulo" />
+        </div>
+        <div class="gallery-item" role="listitem">
+          <img src="service_lips_real.png" alt="Dermopigmentação Estética Labial Antes e Depois por Gisele de Paulo" />
+        </div>
+        <div class="gallery-item" role="listitem">
+          <img src="service_desenho_real.png" alt="Mapeamento Facial e Desenho Personalizado de Sobrancelhas" />
+        </div>
+        <div class="gallery-item" role="listitem">
+          <img src="service_paramedica_real.png" alt="Procedimento Paramédico por Gisele de Paulo em Fortaleza" />
+        </div>
+        <div class="gallery-item" role="listitem">
+          <img src="gisele_lecture_real.png" alt="Gisele de Paulo ministrando palestra e curso sobre Micropigmentação" />
+        </div>
+        <div class="gallery-item" role="listitem">
+          <img src="service_smile_real.png" alt="Cliente satisfeita com resultado de micropigmentação natural" />
+        </div>
+      </div>
+
+      <div class="gallery-cta">
+        <a href="https://www.instagram.com/giseledepaulo/"
+           class="btn-instagram"
+           target="_blank"
+           rel="noopener noreferrer"
+           id="instagram-profile-btn"
+           aria-label="Ver mais no Instagram">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          Ver mais no Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta-final" aria-labelledby="cta-heading">
+    <div class="cta-final-inner reveal">
+      <p class="section-label" style="display:flex;justify-content:center;">Pronta para transformar?</p>
+      <h2 id="cta-heading" class="section-title" style="color:var(--brand-cream);">
+        Agende sua <span>avaliação</span> agora
+      </h2>
+      <p>
+        Dê o primeiro passo para acordar todos os dias com sua melhor versão.
+        Sem compromisso — só uma conversa para entender o que você precisa.
+      </p>
+      <a href="https://wa.me/5585988623793?text=Olá%20Gisele!%20Vim%20pelo%20site%20e%20quero%20agendar%20minha%20avaliação!"
+         class="btn-cta-final"
+         target="_blank"
+         rel="noopener noreferrer"
+         id="cta-final-whatsapp-btn"
+         aria-label="Falar com a Gisele no WhatsApp agora">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+        Falar com a Gisele agora
+      </a>
+      <p class="cta-note">
+        <i class="fa-solid fa-lock" aria-hidden="true"></i>
+        Atendimento personalizado · Sem spam · Apenas pelo WhatsApp
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-logo">Gisele <em>de Paulo</em></div>
+    <div class="footer-tagline">Micropigmentação Paramédica</div>
+    <nav class="footer-links" aria-label="Links do rodapé">
+      <a href="#hero">Início</a>
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="https://wa.me/5585988623793" target="_blank" rel="noopener noreferrer">Contato</a>
+    </nav>
+    <div class="footer-social" aria-label="Redes sociais">
+      <a href="https://www.instagram.com/giseledepaulo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+      </a>
+      <a href="https://wa.me/5585988623793" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Gisele de Paulo — Micropigmentação Paramédica. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP -->
+  <div id="whatsapp-float" role="complementary" aria-label="WhatsApp flutuante">
+    <div class="wa-tooltip" aria-hidden="true">Fale comigo agora! 💬</div>
+    <a href="https://wa.me/5585988623793?text=Olá%20Gisele!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações."
+       class="wa-btn"
+       target="_blank"
+       rel="noopener noreferrer"
+       id="floating-whatsapp-btn"
+       aria-label="Abrir WhatsApp com Gisele de Paulo">
+      <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    'use strict';
+
+    /* Navbar scroll */
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    /* Scroll reveal */
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    /* Service card stagger */
+    document.querySelectorAll('.service-card').forEach((card, i) => {
+      card.style.transitionDelay = (i * 0.15) + 's';
+    });
+
+    /* Carousel */
+    const track   = document.getElementById('carousel-track');
+    const dots    = document.querySelectorAll('.carousel-dot');
+    const btnPrev = document.getElementById('carousel-prev');
+    const btnNext = document.getElementById('carousel-next');
+    let current   = 0;
+    let autoPlay;
+
+    function slides() { return document.querySelectorAll('.testimonial-slide').length; }
+
+    function goTo(i) {
+      current = (i + slides()) % slides();
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach((d, idx) => {
+        d.classList.toggle('active', idx === current);
+        d.setAttribute('aria-selected', idx === current ? 'true' : 'false');
+      });
+    }
+
+    function play()  { autoPlay = setInterval(() => goTo(current + 1), 5000); }
+    function pause() { clearInterval(autoPlay); }
+
+    btnNext.addEventListener('click', () => { pause(); goTo(current + 1); play(); });
+    btnPrev.addEventListener('click', () => { pause(); goTo(current - 1); play(); });
+    dots.forEach(d => d.addEventListener('click', () => { pause(); goTo(+d.dataset.index); play(); }));
+
+    let tx = 0;
+    track.addEventListener('touchstart', e => { tx = e.changedTouches[0].screenX; }, { passive: true });
+    track.addEventListener('touchend',   e => {
+      const diff = tx - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 40) { pause(); goTo(diff > 0 ? current + 1 : current - 1); play(); }
+    }, { passive: true });
+
+    play();
+
+    /* Smooth anchor */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+
+    /*
+     * IMPORTANT — replace the phone number:
+     * Search for  5585988623793  in this file and replace with
+     * the actual WhatsApp number (country code + DDD + number).
+     * Example (Brazil): 5511999887766
+     */
+  </script>
+
+</body>
+</html>
